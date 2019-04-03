@@ -1,6 +1,5 @@
 FROM ubuntu:xenial
-#FROM ubuntu:trusty
-MAINTAINER htz <hetianzhuo@gmail.com>
+LABEL maintainer hetianzhuo@gmail.com
 
 ADD ./certs /opt/certs
 ADD ./bin /usr/local/bin
@@ -13,7 +12,7 @@ WORKDIR /etc/ocserv
 RUN echo "Asia/Shanghai" > /etc/timezone
 
 # install compiler, dependencies, tools , dnsmasq
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential wget xz-utils libgnutls28-dev \
     libev-dev libwrap0-dev libpam0g-dev libseccomp-dev libreadline-dev \
     libnl-route-3-dev libkrb5-dev liboath-dev libtalloc-dev \
