@@ -1,10 +1,12 @@
-FROM ubuntu:trusty
-MAINTAINER Wyatt Pan <wppurking@gmail.com>
+FROM ubuntu:xenial
+#FROM ubuntu:trusty
+MAINTAINER htz <hetianzhuo@gmail.com>
 
 ADD ./certs /opt/certs
 ADD ./bin /usr/local/bin
 ADD dnsmasq.conf /usr/local/etc/dnsmasq.conf
 RUN chmod a+x /usr/local/bin/*
+ADD sources.list /etc/apt/sources.list
 WORKDIR /etc/ocserv
 
 # china timezone
@@ -16,7 +18,7 @@ RUN apt-get update && apt-get install -y \
     libev-dev libwrap0-dev libpam0g-dev libseccomp-dev libreadline-dev \
     libnl-route-3-dev libkrb5-dev liboath-dev libtalloc-dev \
     libhttp-parser-dev libpcl1-dev libopts25-dev autogen pkg-config nettle-dev \
-    gnutls-bin gperf liblockfile-bin nuttcp lcov iptables unzip dnsmasq libghc-gnutls-dev \
+    gnutls-bin gperf liblockfile-bin nuttcp lcov iptables unzip dnsmasq \
     && rm -rf /var/lib/apt/lists/*
 
 # configuration dnsmasq
