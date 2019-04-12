@@ -60,12 +60,8 @@ $> Re-enter password:
 
 
 ## 信息
-* Box Size: 164 MB   (原来是 380+ MB, 基础镜像缩减)
-* 基础 Box: ubuntu:trusty
-* 测试过的环境: 
-  * [Linode 1G Ubuntu 14.04 LTS]
-  * [Vultr 768MB Ubuntu 14.04 LTS]
-  * [DigitalOcean 512MB Docker 1.2.0 on Ubuntu 14.04]
+* Box Size: 153 MB   (原来是 380+ MB, 基础镜像缩减)
+* 基础 Box: ubuntu:xenial
 
 ## Refs
 * [ocserv 0.8.2 Manual](http://www.infradead.org/ocserv/manual.html)
